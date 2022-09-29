@@ -1,26 +1,23 @@
+//// LEGATO FIFE ////
+// James D Cheetham //
+
+
 <control>
-label_cc7=Volume [cc7]
-label_cc10=Pan [cc10]
-label_cc11=Expression [cc11]		set_cc11=127
-label_cc1=Air [cc1]			set_cc1=127
-label_cc3=Dynamics [cc3]		set_cc3=0
-label_cc72=Release [cc72]		set_cc72=16
-
-
+	label_cc7=Volume [cc7]			set_cc7=96
+	label_cc10=Pan [cc10]           set_cc10=64
+	label_cc11=Expression [cc11]	set_cc11=127
+	label_cc1=Air [cc1]				set_cc1=127
+	label_cc3=Dynamics [cc3]		set_cc3=0
+	label_cc72=Release [cc72]		set_cc72=16
 
 <global>
-amplitude_oncc11=100
+	global_volume=-64				volume_oncc7=64
+	pan=-100						pan_oncc10=200
+	amplitude_oncc11=100			amp_veltrack_oncc3=-100
+	ampeg_attack=0.01
 
-amp_veltrack_oncc3=-100
-
-ampeg_attack=0.01
-
-fil_type=lpf_2p
-cutoff=2500
-cutoff_oncc1=16000
-
-fil2_type=lpf_2p
-fil2_veltrack=9600 cutoff2=3600
+	fil_type=lpf_2p			cutoff=2500			cutoff_oncc1=16000			fil_keytrack=100
+	fil2_type=lpf_2p		cutoff2=3600		fil2_veltrack=9600 			fil2_keytrack=100
 
 
 			// initial notes played_____________________________________________
@@ -55,7 +52,7 @@ fil2_veltrack=9600 cutoff2=3600
 ////// release script //////////
 
 		// round robin 1
-		<group> hirand=0.33 group=4  off_by=1 off_by=2 off_by=3 off_by=4 off_by=5 trigger=attack off_mode=time off_time=0.02 offset=2400 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=1 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
+		<group> hirand=0.33 group=4 off_by=1 off_by=2 off_by=3 off_by=4 off_by=5 trigger=attack off_mode=time off_time=0.02 offset=2400 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=0.5 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
 		<region> sample=samples/fife-long-c5-1.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6 offset=8400
 		<region> sample=samples/fife-long-e5-1.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 offset=4800
 		<region> sample=samples/fife-long-g5-1.wav pitch_keycenter=g5 lokey=f5 hikey=g5 volume=-2
@@ -64,7 +61,7 @@ fil2_veltrack=9600 cutoff2=3600
 		<region> sample=samples/fife-long-f6-1.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 		// round robin 2
-		<group> lorand=0.33 hirand=0.66 group=4  off_by=1 off_by=2 off_by=3 off_by=4 off_by=5 trigger=attack off_mode=time off_time=0.02 offset=2400 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=1 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
+		<group> lorand=0.33 hirand=0.66 group=4  off_by=1 off_by=2 off_by=3 off_by=4 off_by=5 trigger=attack off_mode=time off_time=0.02 offset=2400 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=0.5 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
 		<region> sample=samples/fife-long-c5-2.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-8 offset=3800
 		<region> sample=samples/fife-long-e5-2.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 offset=4800 volume=-2
 		<region> sample=samples/fife-long-g5-2.wav pitch_keycenter=g5 lokey=f5 hikey=g5 offset=5300
@@ -73,7 +70,7 @@ fil2_veltrack=9600 cutoff2=3600
 		<region> sample=samples/fife-long-f6-2.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 		// round robin 3
-		<group> lorand=0.66 group=4  off_by=1 off_by=2 off_by=3 off_by=4 off_by=5 trigger=attack off_mode=time off_time=0.02 offset=2400 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=1 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
+		<group> lorand=0.66 group=4  off_by=1 off_by=2 off_by=3 off_by=4 off_by=5 trigger=attack off_mode=time off_time=0.02 offset=2400 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=0.5 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
 		<region> sample=samples/fife-long-c5-3.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6 offset=4800
 		<region> sample=samples/fife-long-e5-3.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 volume=+2 offset=13000
 		<region> sample=samples/fife-long-g5-3.wav pitch_keycenter=g5 lokey=f5 hikey=g5 offset=7200
@@ -85,7 +82,7 @@ fil2_veltrack=9600 cutoff2=3600
 			// legato transition notes___________________________________________
 			
 // round robin 1
-<group> hirand=0.33 group=2 off_by=2 off_by=3 off_by=5 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.01 ampeg_decay=0.03 ampeg_sustain=0 offset=87000
+<group> hirand=0.33 group=2 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.03 ampeg_decay=0.03 ampeg_sustain=0 offset=87750
 
 // for note a4 //
 // no legato
@@ -885,7 +882,7 @@ fil2_veltrack=9600 cutoff2=3600
 
 
 // round robin 2
-<group> lorand = 0.33 hirand=0.66 group=2 off_by=2 off_by=3 off_by=5 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.01 ampeg_decay=0.03 ampeg_sustain=0 offset=87000
+<group> lorand = 0.33 hirand=0.66 group=2 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.03 ampeg_decay=0.03 ampeg_sustain=0 offset=87750
 
 // for note a4 //
 // no legato
@@ -1213,7 +1210,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=g5 hikey=g5 sw_previous=b4
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=g5 hikey=g5 sw_previous=c5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=g5 hikey=g5 sw_previous=c#5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=g5 hikey=g5 sw_previous=d5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=g5 hikey=g5 sw_previous=d5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=g5 hikey=g5 sw_previous=d#5
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=g5 hikey=g5 sw_previous=e5
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=g5 hikey=g5 sw_previous=f5
@@ -1246,7 +1243,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=g#5 hikey=g#5 sw_previous=c5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=g#5 hikey=g#5 sw_previous=c#5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=g#5 hikey=g#5 sw_previous=d5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=g#5 hikey=g#5 sw_previous=d#5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=g#5 hikey=g#5 sw_previous=d#5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=g#5 hikey=g#5 sw_previous=e5
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=g#5 hikey=g#5 sw_previous=f5
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=g#5 hikey=g#5 sw_previous=f#5
@@ -1279,7 +1276,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=a5 hikey=a5 sw_previous=c#5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=a5 hikey=a5 sw_previous=d5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=a5 hikey=a5 sw_previous=d#5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=a5 hikey=a5 sw_previous=e5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=a5 hikey=a5 sw_previous=e5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=a5 hikey=a5 sw_previous=f5
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=a5 hikey=a5 sw_previous=f#5
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=a5 hikey=a5 sw_previous=g5
@@ -1312,7 +1309,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=a#5 hikey=a#5 sw_previous=d5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=a#5 hikey=a#5 sw_previous=d#5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=a#5 hikey=a#5 sw_previous=e5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=a#5 hikey=a#5 sw_previous=f5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=a#5 hikey=a#5 sw_previous=f5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=a#5 hikey=a#5 sw_previous=f#5
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=a#5 hikey=a#5 sw_previous=g5
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=a#5 hikey=a#5 sw_previous=g#5
@@ -1345,7 +1342,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=b5 hikey=b5 sw_previous=d#5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=b5 hikey=b5 sw_previous=e5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=b5 hikey=b5 sw_previous=f5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=b5 hikey=b5 sw_previous=f#5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=b5 hikey=b5 sw_previous=f#5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=b5 hikey=b5 sw_previous=g5
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=b5 hikey=b5 sw_previous=g#5
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=b5 hikey=b5 sw_previous=a5
@@ -1378,7 +1375,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=c6 hikey=c6 sw_previous=e5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=c6 hikey=c6 sw_previous=f5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=c6 hikey=c6 sw_previous=f#5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=c6 hikey=c6 sw_previous=g5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=c6 hikey=c6 sw_previous=g5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=c6 hikey=c6 sw_previous=g#5
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=c6 hikey=c6 sw_previous=a5
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=c6 hikey=c6 sw_previous=a#5
@@ -1411,7 +1408,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=c#6 hikey=c#6 sw_previous=f5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=c#6 hikey=c#6 sw_previous=f#5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=c#6 hikey=c#6 sw_previous=g5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=c#6 hikey=c#6 sw_previous=g#5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=c#6 hikey=c#6 sw_previous=g#5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=c#6 hikey=c#6 sw_previous=a5
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=c#6 hikey=c#6 sw_previous=a#5
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=c#6 hikey=c#6 sw_previous=b5
@@ -1444,7 +1441,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=d6 hikey=d6 sw_previous=f#5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=d6 hikey=d6 sw_previous=g5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=d6 hikey=d6 sw_previous=g#5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=d6 hikey=d6 sw_previous=a5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=d6 hikey=d6 sw_previous=a5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=d6 hikey=d6 sw_previous=a#5
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=d6 hikey=d6 sw_previous=b5
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=d6 hikey=d6 sw_previous=c6
@@ -1477,7 +1474,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=d#6 hikey=d#6 sw_previous=g5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=d#6 hikey=d#6 sw_previous=g#5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=d#6 hikey=d#6 sw_previous=a5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=d#6 hikey=d#6 sw_previous=a#5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=d#6 hikey=d#6 sw_previous=a#5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=d#6 hikey=d#6 sw_previous=b5
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=d#6 hikey=d#6 sw_previous=c6
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=d#6 hikey=d#6 sw_previous=c#6
@@ -1510,7 +1507,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=e6 hikey=e6 sw_previous=g#5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=e6 hikey=e6 sw_previous=a5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=e6 hikey=e6 sw_previous=a#5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=e6 hikey=e6 sw_previous=b5 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=e6 hikey=e6 sw_previous=b5 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=e6 hikey=e6 sw_previous=c6
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=e6 hikey=e6 sw_previous=c#6
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=e6 hikey=e6 sw_previous=d6
@@ -1543,7 +1540,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=f6 hikey=f6 sw_previous=a5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=f6 hikey=f6 sw_previous=a#5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=f6 hikey=f6 sw_previous=b5
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=f6 hikey=f6 sw_previous=c6 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=f6 hikey=f6 sw_previous=c6 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=f6 hikey=f6 sw_previous=c#6
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=f6 hikey=f6 sw_previous=d6
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=f6 hikey=f6 sw_previous=d#6
@@ -1576,7 +1573,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=f#6 hikey=f#6 sw_previous=a#5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=f#6 hikey=f#6 sw_previous=b5
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=f#6 hikey=f#6 sw_previous=c6
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=f#6 hikey=f#6 sw_previous=c#6 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=f#6 hikey=f#6 sw_previous=c#6 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=f#6 hikey=f#6 sw_previous=d6
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=f#6 hikey=f#6 sw_previous=d#6
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=f#6 hikey=f#6 sw_previous=e6
@@ -1609,7 +1606,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=g6 hikey=g6 sw_previous=b5
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=g6 hikey=g6 sw_previous=c6
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=g6 hikey=g6 sw_previous=c#6
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=g6 hikey=g6 sw_previous=d6 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=g6 hikey=g6 sw_previous=d6 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=g6 hikey=g6 sw_previous=d#6
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=g6 hikey=g6 sw_previous=e6
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=g6 hikey=g6 sw_previous=f6
@@ -1642,7 +1639,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=g#6 hikey=g#6 sw_previous=c6
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=g#6 hikey=g#6 sw_previous=c#6
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=g#6 hikey=g#6 sw_previous=d6
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=g#6 hikey=g#6 sw_previous=d#6 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=g#6 hikey=g#6 sw_previous=d#6 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=g#6 hikey=g#6 sw_previous=e6
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=g#6 hikey=g#6 sw_previous=f6
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=g#6 hikey=g#6 sw_previous=f#6
@@ -1675,7 +1672,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-legato-a5f6-2.wav pitch_keycenter=f6 lokey=a6 hikey=a6 sw_previous=c#6
 <region> sample=samples/fife-legato-a5e6-2.wav pitch_keycenter=e6 lokey=a6 hikey=a6 sw_previous=d6
 <region> sample=samples/fife-legato-b5f6-2.wav pitch_keycenter=f6 lokey=a6 hikey=a6 sw_previous=d#6
-<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=a6 hikey=a6 sw_previous=e6 offset=96000
+<region> sample=samples/fife-legato-b5e6-2.wav pitch_keycenter=e6 lokey=a6 hikey=a6 sw_previous=e6 offset=122000
 <region> sample=samples/fife-legato-c6e6-2.wav pitch_keycenter=e6 lokey=a6 hikey=a6 sw_previous=f6
 <region> sample=samples/fife-legato-d6f6-2.wav pitch_keycenter=f6 lokey=a6 hikey=a6 sw_previous=f#6
 <region> sample=samples/fife-legato-d6e6-2.wav pitch_keycenter=e6 lokey=a6 hikey=a6 sw_previous=g6
@@ -1685,7 +1682,7 @@ fil2_veltrack=9600 cutoff2=3600
 
 
 // round robin 3
-<group> lorand=0.66 group=2 off_by=2 off_by=3 off_by=5 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.01 ampeg_decay=0.03 ampeg_sustain=0 offset=87000
+<group> lorand=0.66 group=2 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.03 ampeg_decay=0.03 ampeg_sustain=0 offset=87750
 
 // for note a4 //
 // no legato
@@ -2487,7 +2484,7 @@ fil2_veltrack=9600 cutoff2=3600
 		// next note played_______________________________________________________
 
 // round robin 1
-<group> hirand=0.33 group=3 off_by=3 trigger=legato ampeg_delay=0.01 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
+<group> hirand=0.33 group=3 off_by=3 trigger=legato ampeg_delay=0.03 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
 <region> sample=samples/fife-long-c5-1.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6
 <region> sample=samples/fife-long-e5-1.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 
 <region> sample=samples/fife-long-g5-1.wav pitch_keycenter=g5 lokey=f5 hikey=g5 
@@ -2496,7 +2493,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-long-f6-1.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 // round robin 2
-<group> lorand=0.33 hirand=0.66 group=3 off_by=3 trigger=legato ampeg_delay=0.01 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
+<group> lorand=0.33 hirand=0.66 group=3 off_by=3 trigger=legato ampeg_delay=0.03 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
 <region> sample=samples/fife-long-c5-2.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-8
 <region> sample=samples/fife-long-e5-2.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 
 <region> sample=samples/fife-long-g5-2.wav pitch_keycenter=g5 lokey=f5 hikey=g5 
@@ -2505,7 +2502,7 @@ fil2_veltrack=9600 cutoff2=3600
 <region> sample=samples/fife-long-f6-2.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 // round robin 3
-<group> lorand=0.66 group=3 off_by=3 trigger=legato ampeg_delay=0.01 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
+<group> lorand=0.66 group=3 off_by=3 trigger=legato ampeg_delay=0.03 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
 <region> sample=samples/fife-long-c5-3.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6
 <region> sample=samples/fife-long-e5-3.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 
 <region> sample=samples/fife-long-g5-3.wav pitch_keycenter=g5 lokey=f5 hikey=g5 
@@ -2516,7 +2513,7 @@ fil2_veltrack=9600 cutoff2=3600
 ////////// release SCRIPT //////////////
 
 		// round robin 1
-		<group> hirand=0.33 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.01 off_mode=time off_time=0.02 offset=64000 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=1 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
+		<group> hirand=0.33 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.03 off_mode=time off_time=0.02 offset=64000 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=0.4 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
 		<region> sample=samples/fife-long-c5-1.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6
 		<region> sample=samples/fife-long-e5-1.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 
 		<region> sample=samples/fife-long-g5-1.wav pitch_keycenter=g5 lokey=f5 hikey=g5 
@@ -2525,7 +2522,7 @@ fil2_veltrack=9600 cutoff2=3600
 		<region> sample=samples/fife-long-f6-1.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 		// round robin 2
-		<group> lorand=0.33 hirand=0.66 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.01 off_mode=time off_time=0.02 offset=64000 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=1 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
+		<group> lorand=0.33 hirand=0.66 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.03 off_mode=time off_time=0.02 offset=64000 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=0.4 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
 		<region> sample=samples/fife-long-c5-2.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-8
 		<region> sample=samples/fife-long-e5-2.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 
 		<region> sample=samples/fife-long-g5-2.wav pitch_keycenter=g5 lokey=f5 hikey=g5 
@@ -2534,7 +2531,7 @@ fil2_veltrack=9600 cutoff2=3600
 		<region> sample=samples/fife-long-f6-2.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 		// round robin 3
-		<group> lorand=0.66 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.01 off_mode=time off_time=0.02 offset=64000 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=1 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
+		<group> lorand=0.66 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.03 off_mode=time off_time=0.02 offset=64000 eg01_points=5 eg01_level0=0 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=0.4 eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
 		<region> sample=samples/fife-long-c5-3.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6
 		<region> sample=samples/fife-long-e5-3.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 
 		<region> sample=samples/fife-long-g5-3.wav pitch_keycenter=g5 lokey=f5 hikey=g5 
