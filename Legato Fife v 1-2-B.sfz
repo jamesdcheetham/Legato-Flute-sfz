@@ -4,19 +4,19 @@
 
 <control>
 	label_cc7=Volume [cc7]			set_cc7=96
-	label_cc10=Pan [cc10]           set_cc10=64
-	label_cc11=Expression [cc11]	set_cc11=127
-	label_cc1=Air [cc1]				set_cc1=127
+	label_cc10=Pan [cc10]           	set_cc10=64
+	label_cc11=Expression [cc11]		set_cc11=127
+	label_cc1=Air [cc1]			set_cc1=127
 	label_cc3=Dynamics [cc3]		set_cc3=0
 	label_cc72=Release [cc72]		set_cc72=16
 
 <global>
-	global_volume=-64				volume_oncc7=64
-	pan=-100						pan_oncc10=200
+	global_volume=-64			volume_oncc7=64
+	pan=-100				pan_oncc10=200
 	amplitude_oncc11=100			amp_veltrack_oncc3=-100
 	ampeg_attack=0.01
 
-	fil_type=lpf_2p			cutoff=2500			cutoff_oncc1=16000			fil_keytrack=100
+	fil_type=lpf_2p			cutoff=2500		cutoff_oncc1=16000			fil_keytrack=100
 	fil2_type=lpf_2p		cutoff2=3600		fil2_veltrack=9600 			fil2_keytrack=100
 
 
@@ -82,7 +82,7 @@
 			// legato transition notes___________________________________________
 			
 // round robin 1
-<group> hirand=0.33 group=2 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.05 ampeg_decay=0.03 ampeg_sustain=0 offset=86500
+<group> hirand=0.33 group=2 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.045 ampeg_decay=0.03 ampeg_sustain=0 offset=86500
 
 // for note a4 //
 // no legato
@@ -882,7 +882,7 @@
 
 
 // round robin 2
-<group> lorand = 0.33 hirand=0.66 group=2 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.05 ampeg_decay=0.03 ampeg_sustain=0 offset=86500
+<group> lorand = 0.33 hirand=0.66 group=2 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.045 ampeg_decay=0.03 ampeg_sustain=0 offset=86500
 
 // for note a4 //
 // no legato
@@ -1682,7 +1682,7 @@
 
 
 // round robin 3
-<group> lorand=0.66 group=2 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.05 ampeg_decay=0.03 ampeg_sustain=0 offset=86500
+<group> lorand=0.66 group=2 trigger=legato off_mode=normal ampeg_attack=0.03 ampeg_hold=0.045 ampeg_decay=0.03 ampeg_sustain=0 offset=86500
 
 // for note a4 //
 // no legato
@@ -2484,7 +2484,7 @@
 		// next note played_______________________________________________________
 
 // round robin 1
-<group> hirand=0.33 group=3 off_by=3 trigger=legato ampeg_delay=0.05 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
+<group> hirand=0.33 group=3 off_by=3 trigger=legato ampeg_delay=0.045 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
 <region> sample=samples/fife-long-c5-1.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6
 <region> sample=samples/fife-long-e5-1.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 
 <region> sample=samples/fife-long-g5-1.wav pitch_keycenter=g5 lokey=f5 hikey=g5 
@@ -2493,7 +2493,7 @@
 <region> sample=samples/fife-long-f6-1.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 // round robin 2
-<group> lorand=0.33 hirand=0.66 group=3 off_by=3 trigger=legato ampeg_delay=0,05 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
+<group> lorand=0.33 hirand=0.66 group=3 off_by=3 trigger=legato ampeg_delay=0.045 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
 <region> sample=samples/fife-long-c5-2.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-8
 <region> sample=samples/fife-long-e5-2.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 
 <region> sample=samples/fife-long-g5-2.wav pitch_keycenter=g5 lokey=f5 hikey=g5 
@@ -2502,7 +2502,7 @@
 <region> sample=samples/fife-long-f6-2.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 // round robin 3
-<group> lorand=0.66 group=3 off_by=3 trigger=legato ampeg_delay=0.05 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
+<group> lorand=0.66 group=3 off_by=3 trigger=legato ampeg_delay=0.045 ampeg_attack=0.03 off_mode=normal offset=64000 ampeg_release=0.03
 <region> sample=samples/fife-long-c5-3.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6
 <region> sample=samples/fife-long-e5-3.wav pitch_keycenter=e5 lokey=c#5 hikey=e5 
 <region> sample=samples/fife-long-g5-3.wav pitch_keycenter=g5 lokey=f5 hikey=g5 
@@ -2513,7 +2513,7 @@
 ////////// release SCRIPT //////////////
 
 		// round robin 1
-		<group> hirand=0.33 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.05 off_mode=time off_time=0.02 offset=64000
+		<group> hirand=0.33 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.045 off_mode=time off_time=0.02 offset=64000
 		eg01_points=5 eg01_level0=0 eg01_time01=0.3 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=0.4
 		eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
 		<region> sample=samples/fife-long-c5-1.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6
@@ -2524,7 +2524,7 @@
 		<region> sample=samples/fife-long-f6-1.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 		// round robin 2
-		<group> lorand=0.33 hirand=0.66 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.05 off_mode=time off_time=0.02 offset=64000
+		<group> lorand=0.33 hirand=0.66 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.045 off_mode=time off_time=0.02 offset=64000
 		eg01_points=5 eg01_level0=0 eg01_time01=0.3 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=0.4 eg01_level4=0
 		eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
 		<region> sample=samples/fife-long-c5-2.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-8
@@ -2535,7 +2535,7 @@
 		<region> sample=samples/fife-long-f6-2.wav pitch_keycenter=f6 lokey=e6 hikey=a6 
 
 		// round robin 3
-		<group> lorand=0.66 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.05 off_mode=time off_time=0.02 offset=64000
+		<group> lorand=0.66 group=5 off_by=1 off_by=4 trigger=legato ampeg_delay=0.045 off_mode=time off_time=0.02 offset=64000
 		eg01_points=5 eg01_level0=0 eg01_time01=0.3 eg01_level1=0 eg01_level2=0 eg01_time3=0.018 eg01_shape3=-7 eg01_level3=1 eg01_time4_oncc72=0.4
 		eg01_level4=0 eg01_sustain=1 eg01_amplitude=100 ampeg_release=10 ampeg_release_shape=2
 		<region> sample=samples/fife-long-c5-3.wav pitch_keycenter=c5 lokey=a4 hikey=c5 volume=-6
